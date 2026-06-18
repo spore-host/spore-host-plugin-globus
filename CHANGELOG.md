@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+- Module path and all repo links moved from `github.com/scttfrdmn/...` to
+  `github.com/spore-host/...` to match the repo's home in the spore-host org.
+
 ## [0.1.0] - 2026-03-22
 
 ### Added
@@ -16,5 +20,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Endpoint ID captured in `outputs.endpoint_id` for future deprovision support
 - `pgrep` health check (1-minute interval)
 
-[Unreleased]: https://github.com/scttfrdmn/spore-host-plugin-globus/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/scttfrdmn/spore-host-plugin-globus/releases/tag/v0.1.0
+[Unreleased]: https://github.com/spore-host/spore-host-plugin-globus/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/spore-host/spore-host-plugin-globus/releases/tag/v0.1.0

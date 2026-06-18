@@ -1,4 +1,4 @@
-module github.com/scttfrdmn/spore-host-plugin-globus
+module github.com/spore-host/spore-host-plugin-globus
 
 go 1.21
 
