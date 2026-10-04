@@ -7,7 +7,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- **The changelog policy is now enforced in CI rather than by habit.** A PR that changes
+  non-test Go source without touching `CHANGELOG.md` fails, and `changelog_test.go`
+  checks `[Unreleased]` for duplicate group headings, unknown group names, entries
+  outside a group, and releases missing a compare link.
+  This policy has been suite-wide for a while but only `spawn` enforced it — where it
+  immediately earned its keep, catching a duplicate `### Fixed` **four times in one
+  session** and a PR that had merged with no entry at all (found only at the next
+  release, against an empty `[Unreleased]`, with the entries reconstructed from the diff
+  at tag time).
+  `scripts/changelog-consolidate.py` (and `make changelog-fix` where there's a Makefile)
+  merges duplicate groups mechanically, because two PRs each adding their own
+  `### Fixed` is a routine conflict that merges cleanly for git and badly for the format
+  — not a mistake worth hand-fixing each time.
+
 ### Changed
+
 - Module path and all repo links moved from `github.com/scttfrdmn/...` to
   `github.com/spore-host/...` to match the repo's home in the spore-host org.
 
