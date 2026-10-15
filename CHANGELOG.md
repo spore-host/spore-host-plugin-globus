@@ -14,6 +14,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   fixes Go 1.21 stopped receiving in August 2024 (including the 2026-10-09
   `net/http` batch). A new `govulncheck` job scans the module on every PR, on
   push to `main`, and weekly. Dependencies are already at their latest versions.
+- **Every GitHub Action in CI is pinned to a full commit SHA** (with its version
+  in a trailing comment), so a retagged or compromised action can't change what
+  CI runs. `test.yml` moves off the floating `checkout@v4` / `setup-go@v5` /
+  `codecov-action@v4` tags onto the same releases spawn uses (checkout v7.0.1,
+  setup-go v7.0.0, codecov-action v7.1.1). Dependabot now bumps the pins weekly,
+  and `workflows_test.go` fails on any unpinned action or a missing Dependabot
+  entry (#4).
 
 ### Added
 
