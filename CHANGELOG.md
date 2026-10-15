@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Security
+
+- **Built and tested with Go 1.26.9 (was Go 1.21).** `go.mod` now declares
+  `go 1.26.0` and CI runs on 1.26.9, which carries the standard-library security
+  fixes Go 1.21 stopped receiving in August 2024 (including the 2026-10-09
+  `net/http` batch). A new `govulncheck` job scans the module on every PR, on
+  push to `main`, and weekly. Dependencies are already at their latest versions.
+
 ### Added
 
 - **The changelog policy is now enforced in CI rather than by habit.** A PR that changes

@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-go@v5
         with:
-          go-version: "1.21"
+          go-version: "1.26.9"
           cache: true
       # Changelog gate. CLAUDE.md requires an entry under `## [Unreleased]` in the
       # SAME PR as any user-facing change, and the release ritual promotes that
@@ -107,7 +107,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-go@v5
         with:
-          go-version: "1.21"
+          go-version: "1.26.9"
           cache: true
       - name: Integration tests
         run: go test -tags integration -v -count=1 ./...
