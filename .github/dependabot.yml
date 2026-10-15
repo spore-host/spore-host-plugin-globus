@@ -1,0 +1,30 @@
+# Dependabot configuration.
+# https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+#
+# Every action in .github/workflows is pinned to a commit SHA, which closes the
+# mutable-tag hole but opens a staleness one: a SHA never moves, including past
+# a security fix. Pinning is only safe when something bumps the pins; that is
+# this file. Dependabot rewrites both the SHA and the trailing `# vX.Y.Z`
+# comment, so pins stay readable and workflows_test.go keeps passing.
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+      timezone: "America/Los_Angeles"
+    # Don't propose a release the day it ships; a fresh action tag is exactly
+    # when a compromised or broken one is still unnoticed.
+    cooldown:
+      default-days: 7
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "deps(actions)"
+      include: "scope"
+    groups:
+      # "*", not "actions/*": codecov/codecov-action is not under actions/.
+      github-actions:
+        patterns:
+          - "*"
