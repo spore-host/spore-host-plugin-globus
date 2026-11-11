@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.1] - 2026-11-11
+
 ### Security
 - Build and test with Go 1.26.11 / 1.27.4: GO-2026-6859 (net/http: an HTTP/1 server crash from a `MaxBytesReader` header race), published 2026-11-11.
 - **Built with Go 1.26.10** for GO-2026-6809 (disclosed 2026-10-21), which
@@ -60,6 +62,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Endpoint ID captured in `outputs.endpoint_id` for future deprovision support
 - `pgrep` health check (1-minute interval)
 
-[Unreleased]: https://github.com/spore-host/spore-host-plugin-globus/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/spore-host/spore-host-plugin-globus/compare/v0.2.1...HEAD
+[0.2.1]: https://github.com/spore-host/spore-host-plugin-globus/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/spore-host/spore-host-plugin-globus/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/spore-host/spore-host-plugin-globus/releases/tag/v0.1.0
